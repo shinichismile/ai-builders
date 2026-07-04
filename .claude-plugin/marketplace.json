@@ -11,7 +11,7 @@
       "name": "ai-builders",
       "source": "./",
       "description": "誰でも・どんな業種でも、AI体制の一生をカバーする日本語スキル6点セット（道案内・事業AI化設計・エージェント構築・サブエージェントチーム編成・スキル化・健康診断）",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "author": {
         "name": "M.Shin (@macchi_macchi)"
       },
