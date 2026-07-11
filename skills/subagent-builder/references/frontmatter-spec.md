@@ -30,7 +30,7 @@ model: sonnet
 | プラグインの `agents/` | プラグイン有効な場所 |
 
 - ディレクトリは再帰的にスキャンされる（`agents/review/` のようなサブフォルダ整理OK。識別子は`name`フィールドのみで決まる）
-- **ファイルを直接置いた/編集した場合はセッション再起動が必要**。`/agents` コマンド経由なら即時反映
+- ファイルを直接置いた/編集した場合も**数秒で自動検知される（原則、再起動不要）**。まれに認識されないとき（そのスコープで初めてagentsフォルダを作った直後など）だけ、新しいセッションで確認する
 - プラグイン配布のサブエージェントでは `hooks` / `mcpServers` / `permissionMode` は無視される（セキュリティ上の理由）
 
 ## フロントマター全フィールド
@@ -44,7 +44,7 @@ model: sonnet
 | `tools` | 許可リスト。省略時は親の全ツールを継承。`Read, Glob, Grep` のようにカンマ区切り |
 | `disallowedTools` | 拒否リスト。継承 or tools指定から差し引く。両方指定時はdisallowedTools適用→残りにtoolsを解決 |
 | `model` | `sonnet` / `opus` / `haiku` / `fable` / フルモデルID / `inherit`（省略時はinherit＝親と同じ） |
-| `permissionMode` | `default` / `acceptEdits` / `auto` / `dontAsk` / `bypassPermissions` / `plan`。**bypassPermissionsは原則使わない**（確認なしで何でも実行できてしまう） |
+| `permissionMode` | `default` / `manual`（defaultの別名・v2.1.200以降） / `acceptEdits` / `auto` / `dontAsk` / `bypassPermissions` / `plan`。**bypassPermissionsは原則使わない**（確認なしで何でも実行できてしまう） |
 | `maxTurns` | 最大ターン数。暴走防止の上限として有効 |
 | `skills` | 起動時にコンテキストへ**全文**プリロードするスキル。指定しなくてもSkillツール経由の呼び出しは可能 |
 | `mcpServers` | このサブエージェント専用のMCPサーバー。設定済みサーバー名の参照 or インライン定義 |
