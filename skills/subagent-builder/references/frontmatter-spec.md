@@ -59,7 +59,7 @@ model: sonnet
 ## ツール指定の詳細
 
 - MCPサーバー単位のパターンが使える: `mcp__<server>` または `mcp__<server>__*` でそのサーバーの全ツール。`disallowedTools`では `mcp__*` で全MCPツールを除外
-- サブエージェントでは使えないツール（listしても無効）: `AskUserQuestion`, `EnterPlanMode`, `ExitPlanMode`（permissionMode: plan時を除く）, `ScheduleWakeup` 等、親セッションのUIに依存するもの
+- サブエージェントでは使えないツール（listしても無効）: `AskUserQuestion`, `EnterPlanMode`, `ExitPlanMode`（permissionMode: plan時を除く）, `ScheduleWakeup`, `WaitForMcpServers` など、親セッションのUIや管理機能に依存するもの
 - `tools`に`Agent`を含めると、そのサブエージェントは入れ子のサブエージェントを起動できる
 
 ## モデル解決の優先順位
